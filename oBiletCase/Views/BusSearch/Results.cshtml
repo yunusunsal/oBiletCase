@@ -1,0 +1,36 @@
+﻿@using oBiletCase.Models
+
+@model BusSearchResult
+@{
+    ViewData["Title"] = "Bus Search Results";
+}
+
+    <div class="container">
+
+        <div class="container-header">
+            <div class="back-arrow" onclick="window.location.href='@Url.Action("Index", "BusSearch")';">&#8592;</div>
+            <div class="title">@Model.DepartureCity - @Model.DestinationCity</div>
+            <div class="date">@Model.DepartureDate</div>
+            <div class="explore-on"  onclick="window.open('https://www.obilet.com/seferler/@Model.DepartureCityId-@Model.DestinationCityId/@Model.DepartureDateString', '_blank').focus();">Explore on oBilet.com</div>
+        </div>
+        @foreach (var journey in Model.BusJourneys)
+        {
+         <div class="card">
+            <div class="info">
+                <div class="times">
+                    <div class="time-block">
+                        <span class="label">KALKIŞ</span>
+                        <span class="time">@journey.Departure.ToString("t")</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="label">VARIŞ</span>
+                        <span class="time">@journey.Arrival.ToString("t")</span>
+                    </div>
+                    </div>
+                    <div class="route">@journey.Origin - @journey.Destination</div>
+                </div>
+                <div class="price" style="cursor:pointer" onclick="window.open('https://www.obilet.com/seferler/@Model.DepartureCityId-@Model.DestinationCityId/@Model.DepartureDateString/@journey.Id', '_blank').focus();">@journey.Price TL</div>
+          </div>
+        }
+    </div>
+

@@ -1,0 +1,269 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5;
+    height: 100vh;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+
+form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="date"] {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+    input[type="text"]:focus, input[type="date"]:focus {
+        border-color: #aaa;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+button[type="submit"] {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    button[type="submit"]:hover {
+        background-color: #23527c;
+    }
+
+
+.ui-autocomplete {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    .ui-autocomplete li {
+        padding: 10px;
+        cursor: pointer;
+    }
+
+        .ui-autocomplete li:hover {
+            background-color: #f0f0f0;
+        }
+
+        .ui-autocomplete li.ui-state-focus {
+            background-color: #337ab7;
+            color: #fff;
+        }
+
+#swap {
+    right: 0;
+    top: -1em;
+    border: 1px solid #5d686e;
+    border-radius: 50%;
+    height: 2.8em !important;
+    max-width: 3em !important;
+    width: 2.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    padding: 0;
+    background: #fff;
+    z-index: 1;
+}
+
+#swap svg {
+    transform: rotate(90deg);
+    height: 2.2em!important;
+}
+
+
+
+.date-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.butonlar {
+    display: flex;
+    flex-direction: column;
+    width:50px;
+}
+
+button {
+    padding: 10px;
+    font-size: 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 1px;
+    height: 3em;
+    width: 100%;
+}
+
+#today-button {
+    background-color: dimgray;
+    color:white;
+}
+
+#tomorrow-button {
+    background-color: white;
+    color:black;
+}
+
+#search-journey:hover, #today-button:hover, #tomorrow-button:hover {
+    background-color: #0056b3 !important;
+}
+
+#search-journey:focus, #today-button:focus, #tomorrow-button:focus {
+    outline: none !important;
+}
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+    position: relative;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.times {
+    display: flex;
+    gap: 20px;
+}
+
+.time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label {
+    font-size: 12px;
+    color: #666;
+}
+
+.time {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.route {
+    font-size: 14px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.price {
+    background: #e74c3c;
+    color: white;
+    font-weight: bold;
+    font-size: 18px; 
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+
+.container-header {
+    background-color: #2a4bb7; 
+    color: white; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.back-arrow {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.title {
+    font-size: 24px;
+    margin: 0;
+}
+
+.date {
+    font-size: 18px;
+    margin: 5px 0 0 0;
+}
+
+.explore-on {
+    position: absolute;
+    right: 15px;
+    font-size: 12px;
+    cursor: pointer;
+    word-wrap:break-word;
+    max-width: 71px;
+    color: black;
+    border: 1px solid black;
+    padding: 5px;
+}

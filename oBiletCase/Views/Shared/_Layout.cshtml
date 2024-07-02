@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MyMvcApp</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <svg id="symbols">
+        <symbol id="swap-switch-symbol" viewBox="0 0 15.26 16"><defs>
+        <clipPath id="0d0mz8tmma">
+        <path data-name="Rectangle 6020" d="M0 0h15.26v16H0z"></path>
+        </clipPath>
+        </defs><g data-name="Group 28438" style="clip-path:url(#0d0mz8tmma)">
+        <path data-name="Path 12717" d="M3.915 7.827a.628.628 0 0 0 .444-1.072L2.143 4.541H13.45a.628.628 0 1 0 0-1.256H2.145l2.214-2.214a.628.628 0 0 0-.888-.888L.2 3.458a.626.626 0 0 0-.2.394v.061a.625.625 0 0 0 .013.125.628.628 0 0 0 .17.314l3.289 3.291a.626.626 0 0 0 .444.184" transform="translate(0 .001)"></path>
+        <path data-name="Path 12718" d="M28.836 208.579v-.061a.626.626 0 0 0-.193-.394l-3.275-3.275a.628.628 0 1 0-.888.888l2.215 2.215H14.768a.628.628 0 1 0 0 1.256h11.924l-2.216 2.214a.628.628 0 0 0 .888.888l3.287-3.285a.628.628 0 0 0 .17-.315.626.626 0 0 0 .013-.125" transform="translate(-13.575 -196.493)"></path>
+        </g></symbol>
+</svg>
+</head>
+<body>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="~/js/site.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

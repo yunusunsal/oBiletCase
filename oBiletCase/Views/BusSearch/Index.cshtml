@@ -1,0 +1,56 @@
+@using oBiletCase.Models
+
+@model BusSearchModel
+@{
+    ViewData["Title"] = "Bus Search";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="mb-4">Bus Search</h1>
+            @using (Html.BeginForm("Results","BusSearch"))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-group">
+                    <label for="DepartureCitySelect">Nere­den</label>
+                    @Html.DropDownList("DepartureCityId",new SelectList(ViewBag.BusLocations,"Id","Name"), htmlAttributes: new { @class = "js-example-basic-single form-control", id="DepartureCitySelect", name="DepartureCitySelect", required="required" })
+                    @Html.ValidationMessageFor(p => p.DepartureCityId)
+                    
+                    @Html.HiddenFor(p=> p.DepartureCity,new { id="DepartureCity", name="DepartureCity" })
+                    @Html.HiddenFor(p=> p.DepartureCityId,new { id="DepartureCityId", name="DepartureCityId" })
+                   
+                </div>
+                <div class="form-group" style="position:relative;">
+                    <button type="button" id="swap" class="form-control">
+                        <svg><use link:href="#swap-switch-symbol" xlink:href="#swap-switch-symbol"></use></svg>
+                    </button>
+                    </div>
+                <div class="form-group">
+                    <label for="DestinationCity">Nereye</label>
+                   @Html.DropDownList("DestinationCityId",new SelectList(ViewBag.BusLocations,"Id","Name"), htmlAttributes: new { @class = "js-example-basic-single form-control", id="DestinationCitySelect", name="DestinationCitySelect", required="required" })
+                   @Html.ValidationMessageFor(p => p.DestinationCityId)
+                   @Html.HiddenFor(p=> p.DestinationCity,new { id="DestinationCity", name="DestinationCity" })
+                  
+                   @Html.HiddenFor(p=> p.DestinationCityId,new { id="DestinationCityId", name="DestinationCityId" })
+                  
+                </div>
+                <div class="form-group">
+                    <label for="DepartureDate">Tarih</label>
+                    <div class="date-area">
+                        @Html.TextBoxFor(p=> p.DepartureDate, Model.DepartureDate.ToString("yyyy-MM-dd"),new { id="DepartureDate", name="DepartureDate", type="date", min=@DateTime.Now.ToString("yyyy-MM-dd") })
+                        @Html.ValidationMessageFor(p => p.DepartureDate)
+                        <div class="date-buttons">
+                             <button type="button" id="today-button" class="btn btn-default" onclick="setToday()">Bugün</button>
+                            <button type="button" id="tomorrow-button" class="btn btn-default" onclick="setTomorrow()">Yarın</button>   
+
+                        </div>
+                    </div>
+                                
+                </div>
+                <button type="submit" id="search-journey" class="btn btn-primary">Bileti Bul</button>
+            }
+        </div>
+    </div>
+</div>
